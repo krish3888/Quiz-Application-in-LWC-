@@ -15,7 +15,7 @@ export default class QuizApp extends LightningElement {
         {id:"Q2", question:'When is a custom object’s associated name field defined?',options:{A:'Never.',B:'During setup.',C:'Before setup.',D:'After setup.'},correctAnswer:'B'},
         {id:"Q3", question:'Select the Incorrect Primitive Data Type.',options:{A:'DateTime',B:'date',C:'time',D:'base32'},correctAnswer:'C'},
         {id:"Q4", question:'Currency and percent fields are what type of value?',options:{A:'Double',B:'Triple',C:'Alphabetical',D:'Single'},correctAnswer:'A'},
-        {id:"Q4", question:'Which of the following is an example of an audit field?',options:{A:'NewID',B:'created',C:'OldID',D:'CreatedById'},correctAnswer:'D'}
+        {id:"Q5", question:'Which of the following is an example of an audit field?',options:{A:'NewID',B:'created',C:'OldID',D:'CreatedById'},correctAnswer:'D'}
     ]
     //store response on every click on the options
     checkAnswer(event){
@@ -25,14 +25,14 @@ export default class QuizApp extends LightningElement {
 
     //on submit the form
     handleSubmit(event){
-        //event.preventDefault();
+        event.preventDefault();
         const correct = this.myQuestions.filter(item=>this.selected[item.id] === item.correctAnswer); 
         this.correctAnswers = correct.length;  
         this.isSubmitted =true; 
     }
 
     //Form reset 
-    handleReset(event){
+    handleReset(){
         this.selected = {};
         this.correctAnswers = 0;
         this.isSubmitted=false;

@@ -7,20 +7,20 @@
                         <div><strong>{ques.id}- {ques.question}</strong></div>
                         <div class="slds-grid slds-gutters slds-var-p-vertical_medium" >
                             <div class="slds-col">
-                                <input type="radio" name={ques.id} value="a" onchange={checkAnswer} />
-                                {ques.options.a}
+                                <input type="radio" name={ques.id} value="A" onchange={checkAnswer} />
+                                <label>A) </label>{ques.options.A}
                             </div>
                             <div class="slds-col">
-                                <input type="radio" name={ques.id} value="b" onchange={checkAnswer} />
-                                {ques.options.b}
+                                <input type="radio" name={ques.id} value="B" onchange={checkAnswer} />
+                                <label>B) </label>{ques.options.B}
                             </div>
                             <div class="slds-col">
-                                <input type="radio" name={ques.id} value="c" onchange={checkAnswer} />
-                                {ques.options.c}
+                                <input type="radio" name={ques.id} value="C" onchange={checkAnswer} />
+                                <label>C) </label>{ques.options.C}
                             </div>
                             <div class="slds-col">
-                                <input type="radio" name={ques.id} value="d" onchange={checkAnswer} />
-                                {ques.options.d} 
+                                <input type="radio" name={ques.id} value="D" onchange={checkAnswer} />
+                                <label>D) </label>{ques.options.D} 
                             </div>
                         </div>
                     </Div>
