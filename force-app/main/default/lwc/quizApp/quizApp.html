@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Quize Card">
+        <div class="slds-var-m-around_medium">
+            <form>
+                <template for:each={myQuestions} for:item="ques">
+                    <Div key={ques.id} class="slds-var-m-bottom_medium">
+                        <div><strong>{ques.id}- {ques.question}</strong></div>
+                        <div class="slds-grid slds-gutters slds-var-p-vertical_medium" >
+                            <div class="slds-col">
+                                <input type="radio" name={ques.id} value="a" onchange={checkAnswer} />
+                                {ques.options.a}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={ques.id} value="b" onchange={checkAnswer} />
+                                {ques.options.b}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={ques.id} value="c" onchange={checkAnswer} />
+                                {ques.options.c}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={ques.id} value="d" onchange={checkAnswer} />
+                                {ques.options.d} 
+                            </div>
+                        </div>
+                    </Div>
+                </template>
+                <lightning-button disabled={allNotSelected}
+                    variant="Brand" type="submit" title="Submit Quiz"
+                    label="Submit" class="slds-var-m-around_small" onclick={handleSubmit}>
+                </lightning-button>
+                <lightning-button 
+                    variant="Brand" type="reset" title="Reset Quiz"
+                    label="Reset" class="slds-var-m-around_small" onclick={handleReset}>
+                </lightning-button>
+            </form>
+        </div>
+        <template if:true={isSubmitted}>
+            <div class={isScoredFull}>Score is {correctAnswers} out of {myQuestions.length}.</div>
+        </template>
+    </lightning-card>
+</template>
