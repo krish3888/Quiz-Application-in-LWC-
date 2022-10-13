@@ -11,10 +11,11 @@ export default class QuizApp extends LightningElement {
 
     //Questions with option and answers
     myQuestions=[
-        {id:"Q1", question:'My name is ',options:{a:'aa',b:'bb',c:'cc',d:'dd'},correctAnswer:'a'},
-        {id:"Q2", question:'My fName is ',options:{a:'aa',b:'bb',c:'cc',d:'dd'},correctAnswer:'a'},
-        {id:"Q3", question:'My lName is ',options:{a:'aa',b:'bb',c:'cc',d:'dd'},correctAnswer:'c'},
-        {id:"Q4", question:'My fullName is ',options:{a:'aa',b:'bb',c:'cc',d:'dd'},correctAnswer:'b'}
+        {id:"Q1", question:'Double values have what restrictions?',options:{A:'Scale and precision.',B:'Scale and position.',C:'Age and scale.',D:'Size and time.'},correctAnswer:'A'},
+        {id:"Q2", question:'When is a custom object’s associated name field defined?',options:{A:'Never.',B:'During setup.',C:'Before setup.',D:'After setup.'},correctAnswer:'B'},
+        {id:"Q3", question:'Select the Incorrect Primitive Data Type.',options:{A:'DateTime',B:'date',C:'time',D:'base32'},correctAnswer:'C'},
+        {id:"Q4", question:'Currency and percent fields are what type of value?',options:{A:'Double',B:'Triple',C:'Alphabetical',D:'Single'},correctAnswer:'A'},
+        {id:"Q4", question:'Which of the following is an example of an audit field?',options:{A:'NewID',B:'created',C:'OldID',D:'CreatedById'},correctAnswer:'D'}
     ]
     //store response on every click on the options
     checkAnswer(event){
